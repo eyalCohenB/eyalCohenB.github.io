@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        input {
-            width: 50px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        button {
-            width: 50px;
-            padding: 10px;
-            font-size: 16px;
-            margin: 5px;
-        }
-    </style>
+    <title>ScientificCalculator</title>
+    <!--
+        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
+        Read more here: https://tailwindcss.com/docs/installation 
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <!-- example for dark theme styling when using tailwind cdn -->
 </head>
-<body>
 
-    <h2>Simple Calculator</h2>
-    <form name="calculator">
-        <input type="text" name="display" id="display" readonly>
-        <br>
-        <button type="button" onclick="clearDisplay()">C</button>
-        <button type="button" onclick="appendToDisplay('/')">/</button>
-        <br>
-        <button type="button" onclick="appendToDisplay('7')">7</button>
-        <button type="button" onclick="appendToDisplay('8')">8</button>
-        <button type="button" onclick="appendToDisplay('9')">9</button>
-        <button type="button" onclick="appendToDisplay('*')">*</button>
-        <br>
-        <button type="button" onclick="appendToDisplay('4')">4</button>
-        <button type="button" onclick="appendToDisplay('5')">5</button>
-        <button type="button" onclick="appendToDisplay('6')">6</button>
-        <button type="button" onclick="appendToDisplay('-')">-</button>
-        <br>
-        <button type="button" onclick="appendToDisplay('1')">1</button>
-        <button type="button" onclick="appendToDisplay('2')">2</button>
-        <button type="button" onclick="appendToDisplay('3')">3</button>
-        <button type="button" onclick="appendToDisplay('+')">+</button>
-        <br>
-        <button type="button" onclick="appendToDisplay('0')">0</button>
-        <button type="button" onclick="calculateResult()">=</button>
-    </form>
+<body class="dark:text-white light:text-black">
+
+    <!--Scientific Calculator web app-->
+
+    <div id="calculator">
+        <input type="text" id="display">
+        <div class="row">
+            <input type="button" value="e" onclick="appendToDisplay(Math.E)">
+            <input type="button" value="C" onclick="clearDisplay()">
+            <input type="button" value="←" onclick="deleteLastCharacter()">
+        </div>
+        <div class="row">
+            <input type="button" value="1/x" onclick="notImplemented()">
+            <input type="button" value="|x|" onclick="notImplemented()">
+            <input type="button" value="exp" onclick="appendToDisplay('**')">
+            <input type="button" value="mod" onclick="notImplemented()">
+        </div>
+        <div class="row">
+            <input type="button" value="²√x" onclick="appendToDisplay('0')">
+            <input type="button" value="&lpar;" onclick="appendToDisplay('(')">
+            <input type="button" value="&rpar;" onclick="appendToDisplay(')')">
+            <input type="button" value="n!" onclick="notImplemented()">
+            <input type="button" value="&divide;" onclick="appendToDisplay('/')">
+        </div>
+        <div class="row">
+            <input type="button" value="xʸ" onclick="appendToDisplay('**')">
+            <input id="number" type="button" value="7" onclick="appendToDisplay('7')">
+            <input id="number" type="button" value="8" onclick="appendToDisplay('8')">
+            <input id="number" type="button" value="9" onclick="appendToDisplay('9')">
+            <input type="button" value="X" onclick="appendToDisplay('*')">
+        </div>
+        <div class="row">
+            <input type="button" value="π" onclick="appendToDisplay(Math.PI)">
+            <input id="number" type="button" value="4" onclick="appendToDisplay('4')">
+            <input id="number" type="button" value="5" onclick="appendToDisplay('5')">
+            <input id="number" type="button" value="6" onclick="appendToDisplay('6')">
+            <input type="button" value="&minus;" onclick="appendToDisplay('-')">
+        </div>
+        <div class="row">
+            <input type="button" value="log" onclick="notImplemented()">
+            <input id="number" type="button" value="1" onclick="appendToDisplay('1')">
+            <input id="number" type="button" value="2" onclick="appendToDisplay('2')">
+            <input id="number" type="button" value="3" onclick="appendToDisplay('3')">
+            <input type="button" value="&plus;" onclick="appendToDisplay('+')">
+        </div>
+        <div class="row">
+            <input type="button" value="x²" onclick="appendToDisplay('**2')">
+            <input type="button" value="ln" onclick="appendToDisplay()">
+            <input id="number" type="button" value="0" onclick="appendToDisplay('0')">
+            <input id="number" type="button" value="." onclick="appendToDisplay('.')">
+            <input type="button" value="&equals;" onclick="calculate()">
+        </div>
+    </div>
+
+<script src="./script.js"></script>
+    
+    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
     <script>
         // custom config for the MTW app 
         const mtwAppConfig = {
@@ -75,7 +96,7 @@
         })
 
     </script>
-    
-
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
 </body>
+
 </html>
