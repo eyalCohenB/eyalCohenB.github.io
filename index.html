@@ -26,13 +26,13 @@
             <input type="button" value="←" onclick="deleteLastCharacter()">
         </div>
         <div class="row">
-            <input type="button" value="1/x" onclick="notImplemented()">
+            <input type="button" value="1/x" onclick="notImplemented('**-1')">
             <input type="button" value="|x|" onclick="notImplemented()">
             <input type="button" value="exp" onclick="appendToDisplay('**')">
             <input type="button" value="mod" onclick="notImplemented()">
         </div>
         <div class="row">
-            <input type="button" value="²√x" onclick="appendToDisplay('0')">
+            <input type="button" value="²√x" onclick="appendToDisplay('**0.5')">
             <input type="button" value="&lpar;" onclick="appendToDisplay('(')">
             <input type="button" value="&rpar;" onclick="appendToDisplay(')')">
             <input type="button" value="n!" onclick="notImplemented()">
@@ -61,7 +61,7 @@
         </div>
         <div class="row">
             <input type="button" value="x²" onclick="appendToDisplay('**2')">
-            <input type="button" value="ln" onclick="appendToDisplay()">
+            <input type="button" value="ln" onclick="notImplemented()">
             <input id="number" type="button" value="0" onclick="appendToDisplay('0')">
             <input id="number" type="button" value="." onclick="appendToDisplay('.')">
             <input type="button" value="&equals;" onclick="calculate()">
